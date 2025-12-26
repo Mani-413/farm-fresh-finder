@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThumbsUp, ThumbsDown, ArrowRight, Star } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, ArrowRight, Star, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,9 +8,10 @@ import { Product } from '@/data/products';
 interface ProductCardProps {
   product: Product;
   onViewSteps: (product: Product) => void;
+  onBuy: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onViewSteps }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onViewSteps, onBuy }) => {
   const { language, t } = useLanguage();
 
   return (
@@ -87,15 +88,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewSteps }) => {
           </ul>
         </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-          onClick={() => onViewSteps(product)}
-        >
-          {t('View Steps', 'படிகளைப் பார்க்கவும்')}
-          <ArrowRight className="w-4 h-4 ml-1" />
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+            onClick={() => onViewSteps(product)}
+          >
+            {t('Steps', 'படிகள்')}
+            <ArrowRight className="w-4 h-4 ml-1" />
+          </Button>
+          <Button
+            size="sm"
+            className="flex-1 bg-success hover:bg-success/90 text-primary-foreground"
+            onClick={() => onBuy(product)}
+          >
+            <ShoppingCart className="w-4 h-4 mr-1" />
+            {t('Buy', 'வாங்கு')}
+          </Button>
+        </div>
       </div>
     </div>
   );

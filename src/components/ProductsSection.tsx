@@ -8,10 +8,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 interface ProductsSectionProps {
   products: Product[];
   onViewSteps: (product: Product) => void;
+  onBuy: (product: Product) => void;
   searchQuery: string;
 }
 
-const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onViewSteps, searchQuery }) => {
+const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onViewSteps, onBuy, searchQuery }) => {
   const { language, t } = useLanguage();
 
   const filteredProducts = products.filter((product) => {
@@ -65,7 +66,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onViewSteps
                     className="animate-slide-up"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
-                    <ProductCard product={product} onViewSteps={onViewSteps} />
+                    <ProductCard product={product} onViewSteps={onViewSteps} onBuy={onBuy} />
                   </div>
                 ))}
               </div>
@@ -92,7 +93,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onViewSteps
                   className="animate-slide-up"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
-                  <ProductCard product={product} onViewSteps={onViewSteps} />
+                  <ProductCard product={product} onViewSteps={onViewSteps} onBuy={onBuy} />
                 </div>
               ))}
             </div>
@@ -106,7 +107,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onViewSteps
                   className="animate-slide-up"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
-                  <ProductCard product={product} onViewSteps={onViewSteps} />
+                  <ProductCard product={product} onViewSteps={onViewSteps} onBuy={onBuy} />
                 </div>
               ))}
             </div>

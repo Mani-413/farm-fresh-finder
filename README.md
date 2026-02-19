@@ -1,41 +1,22 @@
-# Farm Fresh Finder
+# 🌱 Farm Fresh Finder
 
-Farm Fresh Finder is a web-based application that helps users explore and identify fresh farm products through a simple, modern, and responsive interface. The project focuses on usability, performance, and clean design using modern frontend technologies.
+## 📌 Description
+A TypeScript project that helps users find fresh farm produce near them.
 
----
-
-## 📌 Project Objective
-
-The objective of Farm Fresh Finder is to provide an easy-to-use platform where users can browse farm-fresh products and understand their availability using a well-structured and visually appealing web application.
-
----
+## 🛠 Tech Stack
+- TypeScript
+- (Add UI or backend if used)
 
 ## ✨ Features
+- Search fresh produce
+- Filter by location / product
 
-- Clean and intuitive user interface
-- Fully responsive design (mobile, tablet, desktop)
-- Fast loading using modern build tools
-- Modular and reusable components
-- Well-organized project structure
-- Easy to deploy and maintain
+## 🚀 Live Demo
+(Add link if deployed)
 
----
+## 📷 Screenshots
+(Add screenshots)
 
-## 🛠️ Technologies Used
-
-### Frontend
-- React
-- TypeScript
-
-### Styling
-- Tailwind CSS
-- shadcn/ui components
-
-### Build & Tooling
-- Vite
-- ESLint
-
----
-
-## 📂 Project Structure
-
+## 📚 What I Learned
+- TypeScript fundamentals
+- UI development
